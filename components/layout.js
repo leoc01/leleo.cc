@@ -8,7 +8,7 @@ import Description from "./description";
 
 export default function Layout({ children, description, path, activateLink }) {
   return (
-    <div className={`${abeezeeN.className} bg-gray-100 min-h-screen`}>
+    <div className={`${abeezeeN.className} bg-gray-100 min-h-screen pb-10`}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta

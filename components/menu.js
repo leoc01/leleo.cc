@@ -11,7 +11,7 @@ export default function Menu({ path, activateLink }) {
     { title: "contato", path: "/contato" },
   ];
 
-  const getClassNameToMenu = (path) => {
+  const isActive = (path) => {
     const baseClassName = "px-5";
 
     return href !== path || activateLink
@@ -51,7 +51,7 @@ export default function Menu({ path, activateLink }) {
         {menuItems.map((menuItem) => {
           return (
             <Link
-              className={getClassNameToMenu(menuItem.path)}
+              className={isActive(menuItem.path)}
               href={menuItem.path}
               key={menuItem.path}
             >

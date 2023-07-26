@@ -1,8 +1,18 @@
 import Layout from "/components/layout";
 import Head from "next/head";
 import Card from "../../components/card";
+import { getSortedPostsData } from "/lib/posts";
 
-function Blog() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+function Blog({ allPostsData }) {
   return (
     <Layout
       description="Neste blog, você encontra informações sobre ferramentas e técnicas
@@ -11,7 +21,18 @@ function Blog() {
       <Head>
         <title>Blog do Leonardo</title>
       </Head>
-      <Card />
+      <ul>
+        {allPostsData.map(({ id, date, title, description }) => (
+          <li key={id}>
+            <Card
+              title={title}
+              date={date}
+              description={description}
+              path={id}
+            />
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 }
