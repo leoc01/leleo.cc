@@ -27,14 +27,21 @@ export default function Menu({ path, activateLink }) {
           className={`${
             (href !== "/" && "hover:underline text-gray-500 text-current") ||
             "text-gray-800 pointer-events-none"
-          } text-4xl pr-2`}
+          } text-4xl`}
         >
-          leleo.cc /
+          leleo.cc
         </Link>
+        <p
+          className={`${
+            (href !== "/" && "text-gray-500") || "text-gray-900"
+          } text-4xl px-3`}
+        >
+          /
+        </p>
         {href !== "/" && (
           <Link
             href={href}
-            className={`text-gray-900 text-5xl ${
+            className={`text-gray-900 text-4xl ${
               activateLink ? "hover:underline" : "pointer-events-none"
             }`}
           >
