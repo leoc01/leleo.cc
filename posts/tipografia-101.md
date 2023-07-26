@@ -1,6 +1,6 @@
 ---
 title: "Um design melhor: Tipografia e Espaçamento"
-date: "2020-01-02"
+date: "2023-07-26"
 description: "Como bla bla bla..."
 ---
 
