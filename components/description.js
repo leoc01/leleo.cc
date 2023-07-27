@@ -5,7 +5,7 @@ export default function Description({ description }) {
   return (
     <Container>
       <div className="h-24 flex flex-col justify-between mt-12">
-        <p id="description" className="max-w-2xl text-xl">
+        <p id="description" className="text-xl">
           {description}
         </p>
         <hr />

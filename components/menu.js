@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Menu({ path, activateLink }) {
   const actualLocal = useRouter();
@@ -53,25 +54,33 @@ export default function Menu({ path, activateLink }) {
   };
 
   const getMenuState = () => {
+    const [clicked, setClicked] = useState(false);
+
     return (
-      <div>
-        {menuItems.map((menuItem) => {
-          return (
-            <Link
-              className={isActive(menuItem.path)}
-              href={menuItem.path}
-              key={menuItem.path}
-            >
-              {menuItem.title}
-            </Link>
-          );
-        })}
-      </div>
+      <>
+        <div className={`relative bg-white ${clicked ? "block" : "hidden"}`}>
+          <div className="fixed flex flex-col">
+            <p className={isActive(href)}>ir para...</p>
+            {menuItems.map((menuItem) => {
+              return (
+                <Link
+                  className={isActive(menuItem.path)}
+                  href={menuItem.path}
+                  key={menuItem.path}
+                >
+                  {menuItem.title}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <button onClick={() => setClicked((current) => !current)}>hi</button>
+      </>
     );
   };
 
   return (
-    <nav className="py-3 flex justify-between text-gray-500 text-2xl max-w-5xl mx-auto h-28 items-end">
+    <nav className="py-3 flex justify-between text-gray-500 text-2xl max-w-5xl mx-auto items-start">
       {getLogoState()}
       {getMenuState()}
     </nav>
