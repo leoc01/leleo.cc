@@ -104,7 +104,7 @@ export default function Menu({ path, activateLink }) {
   };
 
   return (
-    <nav className="py-3 w-full flex justify-between text-gray-500 text-2xl mx-auto items-start">
+    <nav className="pb-3 pt-6 w-full flex justify-between text-gray-500 text-2xl mx-auto items-start">
       {getLogoState()}
     </nav>
   );
