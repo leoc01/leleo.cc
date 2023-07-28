@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import linkedinIcon from "../public/linkedin.svg";
+import githubIcon from "../public/github.svg";
+import Image from "next/image";
 
 export default function Menu({ path, activateLink }) {
   const actualLocal = useRouter();
@@ -90,6 +93,28 @@ export default function Menu({ path, activateLink }) {
                   </Link>
                 );
               })}
+              <div className="md:hidden grid grid-cols-2 gap-2">
+                <Link
+                  className="relative h-20 w-full"
+                  href="https://github.com/leoc01"
+                >
+                  <Image
+                    src={githubIcon}
+                    fill
+                    className="aspect-square p-2 rounded-2xl object-contain"
+                  />
+                </Link>
+                <Link
+                  className="relative h-20 w-full"
+                  href="https://www.linkedin.com/in/leocampetti/"
+                >
+                  <Image
+                    src={linkedinIcon}
+                    fill
+                    className="aspect-square p-2 rounded-2xl object-contain"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
           <button

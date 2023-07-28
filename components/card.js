@@ -14,6 +14,7 @@ export default function Card({ title, date, description, path }) {
               src={post1img}
               fill
               className="aspect-square rounded-2xl object-contain"
+              placeholder="blur"
             ></Image>
           </div>
           <div className="py-4 px-8 md:w-3/4">
