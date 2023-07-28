@@ -32,7 +32,7 @@ function Post({ postData }) {
         <title>Post do Leonardo</title>
       </Head>
       <Container>
-        <article className="mt-12 bg-white p-14 max-w-3xl rounded-2xl drop-shadow-md border">
+        <article className="mt-12 bg-white px-4 py-8 max-w-3xl rounded-2xl drop-shadow-md border">
           <h1 className="text-3xl">{postData.title}</h1>
           <Date className="text-gray-400 text-s" dateString={postData.date} />
           <div
@@ -51,10 +51,6 @@ function Post({ postData }) {
 
           h3 {
             margin
-          }
-
-          p {
-            margin-top: 1rem;
           }
         `}
       </style>

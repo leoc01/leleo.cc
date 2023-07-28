@@ -4,8 +4,8 @@ import Script from "next/script";
 export default function Description({ description }) {
   return (
     <Container>
-      <div className="h-24 flex flex-col justify-between mt-12">
-        <p id="description" className="text-xl">
+      <div className="flex flex-col justify-between mt-12">
+        <p id="description" className="text-xl md:max-w-3xl">
           {description}
         </p>
         <hr />
