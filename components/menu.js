@@ -102,28 +102,28 @@ export default function Menu({ path, activateLink }) {
                   </Link>
                 );
               })}
-              <div className="p-10 md:hidden grid grid-cols-2 gap-2">
+              <div className="p-10 md:hidden inline-grid grid-cols-2 gap-2">
                 <Link
-                  className="relative h-16 w-full"
+                  className="relative h-16"
                   href="https://github.com/leoc01"
                   target="_blank"
                 >
                   <Image
                     src={githubIcon}
                     fill
-                    className="aspect-square p-2 rounded-2xl object-contain"
+                    className="p-2 rounded-2xl object-contain"
                     placeholder="blur"
                   />
                 </Link>
                 <Link
-                  className="relative h-16 w-full"
+                  className="relative h-16"
                   href="https://www.linkedin.com/in/leocampetti/"
                   target="_blank"
                 >
                   <Image
                     src={linkedinIcon}
                     fill
-                    className="aspect-square p-2 rounded-2xl object-contain"
+                    className="p-2 rounded-2xl object-contain"
                     placeholder="blur"
                   />
                 </Link>
