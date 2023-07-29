@@ -35,7 +35,7 @@ export default function Menu({ path, activateLink }) {
             "text-gray-800 pointer-events-none"
           } text-3xl`}
         >
-          leleo.cc
+          <strong>leleo.cc</strong>
         </Link>
         <p
           className={`${
@@ -56,7 +56,9 @@ export default function Menu({ path, activateLink }) {
                 activateLink ? "hover:underline" : "pointer-events-none"
               }`}
             >
-              {menuItems.find((item) => item.path === href).title}
+              <strong>
+                {menuItems.find((item) => item.path === href).title}
+              </strong>
             </Link>
           )}
           <div
