@@ -16,7 +16,7 @@ export default function Menu({ path, activateLink }) {
   ];
 
   const isActive = (path) => {
-    const baseClassName = "px-1 md:px-3";
+    const baseClassName = "px-16 md:px-3 pt-2 md:pt-0";
 
     return href !== path || activateLink
       ? `${baseClassName} hover:underline`
@@ -62,23 +62,30 @@ export default function Menu({ path, activateLink }) {
             </Link>
           )}
           <div
-            className={`fixed md:hidden z-10 top-0 left-0 w-screen h-screen backdrop-blur-xl opacity-75 bg-gray-700 ${
+            className={`fixed md:hidden z-10 top-0 left-0 w-screen h-screen backdrop-blur-sm bg-gray-500/30 ${
               clicked ? "block" : "hidden"
             }`}
             onClick={() => setClicked((current) => !current)}
           ></div>
           <div
-            className={`absolute z-20 md:relative py-4 w-full -top-3 bg-white md:bg-gray-100 ${
+            className={`fixed z-20 left-0 md:relative pt-10 md:pt-4 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
               clicked ? "block" : "hidden md:block"
             }`}
           >
-            <div className="flex flex-col md:flex-row md:justify-end">
+            <div className="flex flex-col  md:flex-row md:justify-end">
               <div className="grid grid-cols-[auto_auto]">
-                <p className="px-1 md:hidden text-gray-300 pointer-events-none justify-self-stretch">
-                  ir para...
-                </p>
+                <Link
+                  href="/"
+                  className={`${
+                    (href !== "/" &&
+                      "hover:underline text-gray-500 text-current") ||
+                    "text-gray-800 pointer-events-none"
+                  } px-16 md:hidden`}
+                >
+                  leleo.cc
+                </Link>
                 <button
-                  className="justify-self-end self-end px-3 md:hidden"
+                  className="justify-self-end self-end px-4 md:hidden"
                   onClick={() => setClicked((current) => !current)}
                 >
                   X
@@ -95,10 +102,11 @@ export default function Menu({ path, activateLink }) {
                   </Link>
                 );
               })}
-              <div className="md:hidden grid grid-cols-2 gap-2">
+              <div className="p-10 md:hidden grid grid-cols-2 gap-2">
                 <Link
                   className="relative h-20 w-full"
                   href="https://github.com/leoc01"
+                  target="_blank"
                 >
                   <Image
                     src={githubIcon}
@@ -109,6 +117,7 @@ export default function Menu({ path, activateLink }) {
                 <Link
                   className="relative h-20 w-full"
                   href="https://www.linkedin.com/in/leocampetti/"
+                  target="_blank"
                 >
                   <Image
                     src={linkedinIcon}
