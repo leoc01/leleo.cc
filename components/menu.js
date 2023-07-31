@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import linkedinIcon from "../public/linkedin.png";
 import githubIcon from "../public/github.png";
+import menuIcon from "../public/menu.png";
+import closeIcon from "../public/close.png";
 import Image from "next/image";
 
 export default function Menu({ path, activateLink }) {
@@ -45,7 +47,7 @@ export default function Menu({ path, activateLink }) {
           /
         </p>
         <div
-          className={`relative h-9 grow grid ${
+          className={`relative h-9 grow grid justify-between grid-cols-[auto_auto] ${
             href !== "/" ? "grid-cols-[auto_auto]" : ""
           }`}
         >
@@ -72,8 +74,8 @@ export default function Menu({ path, activateLink }) {
               clicked ? "block" : "hidden md:block"
             }`}
           >
-            <div className="flex flex-col  md:flex-row md:justify-end">
-              <div className="grid grid-cols-[auto_auto]">
+            <div className="flex flex-col md:flex-row md:justify-end">
+              <div className="grid grid-cols-[auto_auto] grow">
                 <Link
                   href="/"
                   className={`${
@@ -85,10 +87,15 @@ export default function Menu({ path, activateLink }) {
                   leleo.cc
                 </Link>
                 <button
-                  className="justify-self-end self-end px-4 md:hidden"
+                  className="justify-self-end relative px-3 md:hidden"
                   onClick={() => setClicked((current) => !current)}
                 >
-                  X
+                  <Image
+                    src={closeIcon}
+                    fill
+                    className="object-contain"
+                    placeholder="blur"
+                  />
                 </button>
               </div>
               {menuItems.map((menuItem) => {
@@ -131,10 +138,15 @@ export default function Menu({ path, activateLink }) {
             </div>
           </div>
           <button
-            className="justify-self-end self-end px-3 md:hidden"
+            className="relative px-3 md:hidden col-start-2 col-span-1"
             onClick={() => setClicked((current) => !current)}
           >
-            M
+            <Image
+              src={menuIcon}
+              fill
+              className="object-contain"
+              placeholder="blur"
+            />
           </button>
         </div>
       </div>
