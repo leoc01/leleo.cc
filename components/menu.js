@@ -47,8 +47,8 @@ export default function Menu({ path, activateLink }) {
           /
         </p>
         <div
-          className={`relative h-9 grow grid justify-between grid-cols-[auto_auto] ${
-            href !== "/" ? "grid-cols-[auto_auto]" : ""
+          className={`relative h-9 grow grid justify-end grid-cols-[auto_auto] ${
+            href !== "/" ? "grid-cols-[auto_auto] justify-between" : ""
           }`}
         >
           {href !== "/" && (
