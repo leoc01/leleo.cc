@@ -35,7 +35,7 @@ function Laptop() {
     <div className="flex flex-col items-start">
       <div className="md:w-96">
         <button
-          onClick={() => interact(true)}
+          onClick={() => interact((current) => !current)}
           className={`pimba inline-block hover:bg-[#825aba]/75 ${
             opened
               ? "bg-[#825aba]/75 text-gray-100"
