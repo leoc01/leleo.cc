@@ -90,12 +90,7 @@ export default function Menu({ path, activateLink }) {
                   className="justify-self-end relative px-3 md:hidden"
                   onClick={() => setClicked((current) => !current)}
                 >
-                  <Image
-                    src={closeIcon}
-                    fill
-                    className="object-contain"
-                    placeholder="blur"
-                  />
+                  <Image src={closeIcon} fill className="object-contain" />
                 </button>
               </div>
               {menuItems.map((menuItem) => {
@@ -125,7 +120,6 @@ export default function Menu({ path, activateLink }) {
                     src={githubIcon}
                     fill
                     className="p-2 rounded-2xl object-contain"
-                    placeholder="blur"
                   />
                 </Link>
                 <Link
@@ -137,7 +131,6 @@ export default function Menu({ path, activateLink }) {
                     src={linkedinIcon}
                     fill
                     className="p-2 rounded-2xl object-contain"
-                    placeholder="blur"
                   />
                 </Link>
               </div>
@@ -147,12 +140,7 @@ export default function Menu({ path, activateLink }) {
             className="relative px-3 md:hidden col-start-2 col-span-1"
             onClick={() => setClicked((current) => !current)}
           >
-            <Image
-              src={menuIcon}
-              fill
-              className="object-contain"
-              placeholder="blur"
-            />
+            <Image src={menuIcon} fill className="object-contain" />
           </button>
         </div>
       </div>

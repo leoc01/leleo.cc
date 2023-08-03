@@ -8,7 +8,7 @@ export default function Card({ title, date, description, path }) {
   return (
     <Container>
       <Link href={`/blog/${path}`}>
-        <div className="flex mb-6 bg-white mt-5 md:h-40 rounded-2xl md:max-w-3xl transition ease-out duration-300 drop-shadow-md border md:hover:drop-shadow-xl hover:-translate-y-1">
+        <div className="flex mb-6 bg-white mt-5 md:h-40 rounded-2xl md:max-w-3xl transition ease-out duration-300 drop-shadow-md border md:hover:drop-shadow-xl md:hover:-translate-y-1">
           <div className="hidden md:block relative md:w-1/4">
             <Image
               src={post1img}
