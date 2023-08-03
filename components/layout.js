@@ -9,7 +9,7 @@ import Description from "./description";
 export default function Layout({ children, description, path, activateLink }) {
   return (
     <div
-      className={`${abeezeeN.className} bg-gray-100 min-h-screen px-4 pb-10`}
+      className={`${abeezeeN.className} scroll-smooth bg-gray-100 min-h-screen px-4 pb-10`}
     >
       <Head>
         <link rel="icon" href="./website-design.svg" />

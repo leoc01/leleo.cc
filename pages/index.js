@@ -1,17 +1,120 @@
+import Laptop from "../components/laptop";
 import Layout from "../components/layout";
 import Head from "next/head";
+import Card from "../components/card";
+import Button from "../components/button";
+import Details from "../components/details";
+import Image from "next/image";
+import Link from "next/link";
+import mailIcon from "../public/mail.png";
+import arrowDown from "../public/down.png";
 
 function Home() {
   return (
-    <Layout
-      description="Oi, eu sou o Leonardo. Trabalho com desenvolvimento web. O meu foco é
-    em criar páginas que levam o internauta a encontrar o conteúdo
-    procurado da forma mais breve possível."
-    >
-      <Head>
-        <title>Portfólio do Leonardo</title>
-      </Head>
-    </Layout>
+    <>
+      <Layout>
+        <Head>
+          <title>Portfólio do Leonardo</title>
+        </Head>
+        <p className="text-2xl pt-28">Prazer, Léo.</p>
+        <p className="text-4xl pt-10">
+          Eu faço websites{" "}
+          <span className="bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 bg-[length:100%_5px] bg-no-repeat bg-bottom">
+            ultra-rápidos
+          </span>{" "}
+          que{" "}
+          <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-600 bg-[length:100%_5px] bg-no-repeat bg-bottom">
+            engajam o seu público
+          </span>
+        </p>
+        <Button text="Conheça os meus projetos" href="#projetos" />
+        <hr id="projetos" className="my-12" />
+        <p className="mb-3 text-lg">Clientes que já estão se destacando:</p>
+
+        <Laptop />
+        <p id="ideia" className="text-lg mt-20 px-2">
+          Se você está pensando em construir uma presença online para você ou
+          para o seu negócio...
+        </p>
+        <Link href="#ideia" scroll={false}>
+          <Image
+            src={arrowDown}
+            height={30}
+            width={30}
+            className="mx-auto my-8"
+          />
+        </Link>
+        <p className="text-lg px-2 mb-8">
+          Venha ver este blog onde explico sobre práticas modernas de
+          desenvolvimento web, e os passos que sigo nos meus projetos.
+        </p>
+        <p className="text-lg px-2 mb-8">
+          Eu indico muito a leitura deste post:
+        </p>
+
+        <Card
+          title="Principais etapas no desenvolvimento de um website funcional"
+          date="2023-08-01"
+          description="Eu tenho um blog onde ensino sobre práticas modernas de desenvolvimento web, e os processos que utilizo..."
+          path="figma-button"
+        />
+        <p className="text-2xl mt-24 mb-8">
+          <span>O que eu faço?</span>
+        </p>
+        <Details title="Desenvolvimento de Websites">
+          <p className="mb-2">
+            Desenvolvimento de Websites, Landing Pages, Blogs, com tecnologias
+            atuais e sempre considerando as melhores práticas de UX design, SEO
+            e acessibilidade.
+          </p>
+        </Details>
+
+        <Details title="Hospedagem em servidores de alta performance">
+          <p className="mb-2">
+            O seu site será rápido e terá alta disponibilidade. Mantendo a
+            qualidade mesmo com uma quantidade muito grande de acessos, a um
+            ótimo custo-benefício. Suporte incluso.
+          </p>
+          <p className="mb-2">Suporte incluso.</p>
+        </Details>
+
+        <Details title="Elaboração de protótipo interativo">
+          <p className="mb-2">
+            Criação de protótipo interativo no Figma para o seu Website ou
+            Aplicativo. O protótipo é desenvolvido Mobile-first, e sempre
+            seguindo os manuais de identidade visual desenvolvidos pelo seu
+            designer.
+          </p>
+          <p className="mb-2">
+            Se você ainda não tem uma identidade visual, eu posso indicar um
+            estúdio que faz um trabalho incrível.
+          </p>
+        </Details>
+        <p></p>
+        <hr />
+        <p className="mt-24 text-2xl pr-10">
+          Me manda um email, vamos explorar melhor as{" "}
+          <span className="bg-gradient-to-r from-slate-500 via-lime-500 to-pink-500 bg-[length:100%_3px] bg-no-repeat bg-bottom">
+            suas ideias
+          </span>
+          .
+        </p>
+        <Link
+          href="mailto:leonardocampetti@gmail.com"
+          className="grid grid-cols-[auto_auto] items-center my-8"
+        >
+          <div className="relative h-8">
+            <Image
+              src={mailIcon}
+              fill
+              target="_blank"
+              className="p-2 rounded-2xl object-contain"
+            />
+          </div>
+          <p>leonardocampetti@gmail.com</p>
+        </Link>
+      </Layout>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ export default function Card({ title, date, description, path }) {
   return (
     <Container>
       <Link href={`/blog/${path}`}>
-        <div className="flex mb-6 bg-white mt-5 md:h-40 rounded-2xl md:max-w-3xl transition ease-out duration-300 drop-shadow-md border hover:drop-shadow-xl hover:-translate-y-1">
+        <div className="flex mb-6 bg-white mt-5 md:h-40 rounded-2xl md:max-w-3xl transition ease-out duration-300 drop-shadow-md border md:hover:drop-shadow-xl hover:-translate-y-1">
           <div className="hidden md:block relative md:w-1/4">
             <Image
               src={post1img}
@@ -17,10 +17,10 @@ export default function Card({ title, date, description, path }) {
               placeholder="blur"
             ></Image>
           </div>
-          <div className="py-4 px-8 md:w-3/4">
-            <h3 className="text-lg">{title}</h3>
+          <div className="py-6 px-6 md:w-3/4">
+            <h3 className="text-2xl">{title}</h3>
             <Date className="text-gray-400 text-s" dateString={date} />
-            <p>{description}</p>
+            <p className="text-lg mt-3">{description}</p>
           </div>
         </div>
       </Link>

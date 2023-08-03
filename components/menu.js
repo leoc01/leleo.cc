@@ -6,15 +6,16 @@ import githubIcon from "../public/github.png";
 import menuIcon from "../public/menu.png";
 import closeIcon from "../public/close.png";
 import Image from "next/image";
+import Maildiv from "./maildiv";
 
 export default function Menu({ path, activateLink }) {
   const actualLocal = useRouter();
   const href = path ? path : actualLocal.pathname;
   const menuItems = [
-    { title: "projetos", path: "/projetos" },
+    //{ title: "projetos", path: "/projetos" },
     { title: "blog", path: "/blog" },
-    { title: "currículo", path: "/curriculo" },
-    { title: "contato", path: "/contato" },
+    //{ title: "currículo", path: "/curriculo" },
+    //{ title: "contato", path: "/contato" },
   ];
 
   const isActive = (path) => {
@@ -65,13 +66,17 @@ export default function Menu({ path, activateLink }) {
           )}
           <div
             className={`fixed md:hidden z-10 top-0 left-0 w-screen h-screen backdrop-blur-sm bg-gray-500/30 ${
-              clicked ? "block" : "hidden"
+              clicked
+                ? "animate-[blurer_0.2s_ease-in-out]"
+                : "animate-[desblurer_0.3s_ease-in-out] hidden opacity-0"
             }`}
             onClick={() => setClicked((current) => !current)}
           ></div>
           <div
-            className={`fixed z-20 left-0 md:relative pt-10 md:pt-4 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
-              clicked ? "block" : "hidden md:block"
+            className={`fixed z-20 top-0 left-0 md:relative pt-7 md:pt-4 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
+              clicked
+                ? "animate-[abremenu_0.3s_ease-out]"
+                : "animate-[fechamenu_0.2s_ease-in-out] hidden md:block"
             }`}
           >
             <div className="flex flex-col md:flex-row md:justify-end">
@@ -109,7 +114,13 @@ export default function Menu({ path, activateLink }) {
                   </Link>
                 );
               })}
-              <div className="p-10 md:hidden inline-grid grid-cols-2 gap-2">
+              <p className="text-gray-800 text-lg mt-8 mr-3">
+                Eu sou um Desenvolvedor Web muito curioso, sempre busco estar
+                atualizado e, tenho muito interesse em fazer novas parcerias.
+              </p>
+              <p className="text-gray-800 text-lg mt-8">Me manda um email:</p>
+              <Maildiv />
+              <div className="p-6 md:hidden inline-grid grid-cols-2 gap-2">
                 <Link
                   className="relative h-16"
                   href="https://github.com/leoc01"
