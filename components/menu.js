@@ -11,12 +11,7 @@ import Maildiv from "./maildiv";
 export default function Menu({ path, activateLink }) {
   const actualLocal = useRouter();
   const href = path ? path : actualLocal.pathname;
-  const menuItems = [
-    //{ title: "projetos", path: "/projetos" },
-    { title: "blog", path: "/blog" },
-    //{ title: "currículo", path: "/curriculo" },
-    //{ title: "contato", path: "/contato" },
-  ];
+  const menuItems = [{ title: "blog", path: "/blog" }];
 
   const isActive = (path) => {
     const baseClassName = "px-16 md:px-3 pt-2 md:pt-0";
