@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import mailIcon from "../public/mail.png";
 import arrowDown from "../public/down.png";
+import Maildiv from "../components/maildiv";
 
 function Home() {
   return (
@@ -16,8 +17,8 @@ function Home() {
         <Head>
           <title>Portfólio do Leonardo</title>
         </Head>
-        <p className="text-2xl pt-28">Prazer, Léo.</p>
-        <p className="text-4xl pt-10">
+        <p className="text-2xl pt-28 md:text-center">Prazer, Léo.</p>
+        <p className="text-4xl pt-10 md:max-w-xl md:text-center md:mx-auto">
           Eu faço websites{" "}
           <span className="bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 bg-[length:100%_5px] bg-no-repeat bg-bottom">
             ultra-rápidos
@@ -32,19 +33,21 @@ function Home() {
         <p className="mb-3 text-lg">Clientes que já estão se destacando:</p>
 
         <Laptop />
-        <p id="ideia" className="text-lg mt-20 px-2">
+        <p id="ideia" className="text-lg mt-20 px-2 max-w-3xl">
           Se você está pensando em construir uma presença online para você ou
           para o seu negócio...
         </p>
-        <Link href="#ideia" scroll={false}>
-          <Image
-            src={arrowDown}
-            height={30}
-            width={30}
-            className="mx-auto my-8"
-          />
-        </Link>
-        <p className="text-lg px-2 mb-8">
+        <div className="max-w-3xl grid justify-center">
+          <Link href="#ideia" scroll={false}>
+            <Image
+              src={arrowDown}
+              height={30}
+              width={30}
+              className="mx-auto my-8"
+            />
+          </Link>
+        </div>
+        <p className="text-lg px-2 mb-8 max-w-3xl">
           Venha ver este blog onde explico sobre práticas modernas de
           desenvolvimento web, e os passos que sigo nos meus projetos.
         </p>
@@ -55,8 +58,8 @@ function Home() {
         <Card
           title="Principais etapas no desenvolvimento de um website funcional"
           date="2023-08-01"
-          description="Eu tenho um blog onde ensino sobre práticas modernas de desenvolvimento web, e os processos que utilizo..."
-          path="figma-button"
+          description="Não sabe por onde começar o desenvolvimento do seu website? Sempre começe pelo objetivo."
+          path="etapas-no-desenvolvimento"
         />
         <p className="text-2xl mt-24 mb-8">
           <span>O que eu faço?</span>
@@ -85,34 +88,21 @@ function Home() {
             seguindo os manuais de identidade visual desenvolvidos pelo seu
             designer.
           </p>
-          <p className="mb-2">
+          <p className="mb-2 max-w-3xl">
             Se você ainda não tem uma identidade visual, eu posso indicar um
             estúdio que faz um trabalho incrível.
           </p>
         </Details>
         <p></p>
         <hr />
-        <p className="mt-24 text-2xl pr-10">
+        <p className="mt-24 text-2xl pr-10 max-w-xl md:text-4xl md:text-center md:p-0 md:w-full md:mx-auto">
           Me manda um email, vamos explorar melhor as{" "}
           <span className="bg-gradient-to-r from-slate-500 via-lime-500 to-pink-500 bg-[length:100%_3px] bg-no-repeat bg-bottom">
             suas ideias
           </span>
           .
         </p>
-        <Link
-          href="mailto:leonardocampetti@gmail.com"
-          className="grid grid-cols-[auto_auto] items-center my-8"
-        >
-          <div className="relative h-8">
-            <Image
-              src={mailIcon}
-              fill
-              target="_blank"
-              className="p-2 rounded-2xl object-contain"
-            />
-          </div>
-          <p>leonardocampetti@gmail.com</p>
-        </Link>
+        <Maildiv />
       </Layout>
     </>
   );

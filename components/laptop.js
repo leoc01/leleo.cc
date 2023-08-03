@@ -14,7 +14,9 @@ function Laptop() {
       const buttonPosition = button.getBoundingClientRect();
       const distanceToBottom = window.innerHeight - buttonPosition.bottom;
 
-      if (distanceToBottom > 230 && buttonActive) {
+      const activateDist = window.innerWidth > 768 ? 400 : 230;
+
+      if (distanceToBottom > activateDist && buttonActive) {
         button.click();
         setButtonActive(false);
       }
@@ -30,21 +32,28 @@ function Laptop() {
   }, [buttonActive]);
 
   return (
-    <>
-      <button
-        onClick={() => interact(true)}
-        className={`pimba hover:bg-[#825aba]/75 ${
-          opened ? "bg-[#825aba]/75 text-gray-100" : "bg-gray-400 text-gray-800"
-        }  hover:text-gray-100 mr-2 px-2 py-0.5 rounded`}
-      >
-        Resolvoo
-      </button>
-      <div className="py-20">
-        <div className="laptop" onClick={() => interact((current) => !current)}>
+    <div className="flex flex-col items-start">
+      <div className="md:w-96">
+        <button
+          onClick={() => interact(true)}
+          className={`pimba inline-block hover:bg-[#825aba]/75 ${
+            opened
+              ? "bg-[#825aba]/75 text-gray-100"
+              : "bg-gray-400 text-gray-800"
+          }  hover:text-gray-100 mr-2 px-2 py-0.5 rounded`}
+        >
+          Resolvoo
+        </button>
+      </div>
+      <div className="py-20 w-full">
+        <div
+          className="laptop cursor-pointer"
+          onClick={() => interact((current) => !current)}
+        >
           <div className={`laptop__screen ${opened ? "open" : ""}`}>
-            <div className="laptop__status p-1 laptop__status--opened">
+            <div className="laptop__status rounded-sm p-1 md:p-2 laptop__status--opened">
               <div className="relative h-full w-full">
-                <Image src={resolvoo} fill />
+                <Image src={resolvoo} fill className="rounded" />
                 <div
                   className={`bg-gray-900 absolute w-full h-full transition-opacity delay-500 ${
                     opened ? "opacity-0" : "opacity-100"
@@ -63,6 +72,16 @@ function Laptop() {
               --altura: 140px;
               --esptela: 4px;
               --espcorpo: 8px;
+            }
+
+            @media screen and (min-width: 768px) {
+              :root {
+                --factor: 2;
+                --largura: calc(var(--factor) * 250px);
+                --altura: calc(var(--factor) * 140px);
+                --esptela: calc(var(--factor) * 4px);
+                --espcorpo: calc(var(--factor) * 6px);
+              }
             }
 
             .laptop {
@@ -143,7 +162,7 @@ function Laptop() {
             .laptop__status--opened {
               width: var(--largura);
               height: var(--altura);
-              border-radius: 5px;
+              border-radius: 8px;
             }
 
             .laptop__status--closed {
@@ -199,7 +218,7 @@ function Laptop() {
           `}
         </style>
       </div>
-    </>
+    </div>
   );
 }
 

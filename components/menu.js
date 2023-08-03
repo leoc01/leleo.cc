@@ -43,7 +43,7 @@ export default function Menu({ path, activateLink }) {
           /
         </p>
         <div
-          className={`relative h-9 grow grid justify-end grid-cols-[auto_auto] ${
+          className={`relative h-9 grow grid justify-end md:item-baseline grid-cols-[auto_auto] ${
             href !== "/" ? "grid-cols-[auto_auto] justify-between" : ""
           }`}
         >
@@ -68,7 +68,7 @@ export default function Menu({ path, activateLink }) {
             onClick={() => setClicked((current) => !current)}
           ></div>
           <div
-            className={`fixed z-20 top-0 left-0 md:relative pt-7 md:pt-4 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
+            className={`fixed z-20 top-0 left-0 md:relative pt-7 md:pt-1 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
               clicked
                 ? "animate-[abremenu_0.3s_ease-out]"
                 : "animate-[fechamenu_0.2s_ease-in-out] hidden md:block"
@@ -104,35 +104,37 @@ export default function Menu({ path, activateLink }) {
                   </Link>
                 );
               })}
-              <p className="text-gray-800 text-lg mt-8 mr-3">
-                Eu sou um Desenvolvedor Web muito curioso, sempre busco estar
-                atualizado e, tenho muito interesse em fazer novas parcerias.
-              </p>
-              <p className="text-gray-800 text-lg mt-8">Me manda um email:</p>
-              <Maildiv />
-              <div className="p-6 md:hidden inline-grid grid-cols-2 gap-2">
-                <Link
-                  className="relative h-16"
-                  href="https://github.com/leoc01"
-                  target="_blank"
-                >
-                  <Image
-                    src={githubIcon}
-                    fill
-                    className="p-2 rounded-2xl object-contain"
-                  />
-                </Link>
-                <Link
-                  className="relative h-16"
-                  href="https://www.linkedin.com/in/leocampetti/"
-                  target="_blank"
-                >
-                  <Image
-                    src={linkedinIcon}
-                    fill
-                    className="p-2 rounded-2xl object-contain"
-                  />
-                </Link>
+              <div className="md:hidden">
+                <p className="text-gray-800 text-lg mt-8 mr-3">
+                  Eu sou um Desenvolvedor Web muito curioso, sempre busco estar
+                  atualizado e, tenho muito interesse em fazer novas parcerias.
+                </p>
+                <p className="text-gray-800 text-lg mt-8">Me manda um email:</p>
+                <Maildiv />
+                <div className="p-6 md:hidden inline-grid grid-cols-2 gap-2">
+                  <Link
+                    className="relative h-16"
+                    href="https://github.com/leoc01"
+                    target="_blank"
+                  >
+                    <Image
+                      src={githubIcon}
+                      fill
+                      className="p-2 rounded-2xl object-contain"
+                    />
+                  </Link>
+                  <Link
+                    className="relative h-16"
+                    href="https://www.linkedin.com/in/leocampetti/"
+                    target="_blank"
+                  >
+                    <Image
+                      src={linkedinIcon}
+                      fill
+                      className="p-2 rounded-2xl object-contain"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
