@@ -24,11 +24,14 @@ function Details({ title, children }) {
             +
           </div>
         </summary>
-        <div className="pb-4 pl-2 text-lg text-gray-800 max-w-2xl cursor-default">
+        <div
+          onClick={handleToggle}
+          className="pb-4 pl-2 border-gray-300 border-l-2 text-lg text-gray-800 max-w-2xl cursor-default"
+        >
           {children}
         </div>
       </details>
-      <hr className="border-gray-400 max-w-3xl" />
+      <hr className="border-gray-300 max-w-3xl" />
       <style jsx>
         {`
           summary {
