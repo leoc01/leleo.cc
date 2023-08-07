@@ -56,8 +56,8 @@ function Laptop() {
               }}
               style={{
                 backgroundColor:
-                  opened && selectedImage === img.src ? img.color : "#aaaaaa",
-                color: "white",
+                  opened && selectedImage === img.src ? img.color : "#cccccc",
+                color: opened && selectedImage === img.src ? "white" : "black",
               }}
               className="pimba rounded mr-2 px-2 py-0.5"
             >
