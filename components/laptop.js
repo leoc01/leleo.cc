@@ -12,7 +12,7 @@ function Laptop() {
     { src: resolvoo, text: "Resolvoo", color: "#825aba" },
     {
       src: pilatesHome,
-      text: "Plates Home",
+      text: "Pilates Home",
       color: "#6BA478",
     },
   ];
