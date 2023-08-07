@@ -1,29 +1,42 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import resolvoo from "../public/resolvoo.png";
+import pilatesHome from "../public/pilateshome.png";
 
 function Laptop() {
-  const [opened, interact] = useState(false);
+  const [opened, setOpened] = useState(false);
   const [buttonActive, setButtonActive] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(resolvoo);
 
-  //function to handle the automatic click of the button when the user scrolls the page
+  const imagesArray = [
+    { src: resolvoo, text: "Resolvoo", color: "#825aba" },
+    {
+      src: pilatesHome,
+      text: "Plates Home",
+      color: "#6BA478",
+    },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const button = document.querySelector(".pimba");
-      const laptop = document.querySelector(".laptop");
-      const buttonPosition = button.getBoundingClientRect();
-      const distanceToBottom = window.innerHeight - buttonPosition.bottom;
 
-      const activateDist = window.innerWidth > 768 ? 400 : 230;
+      if (button) {
+        const buttonPosition = button.getBoundingClientRect();
+        const distanceToBottom = window.innerHeight - buttonPosition.bottom;
 
-      if (distanceToBottom > activateDist && buttonActive) {
-        button.click();
-        setButtonActive(false);
-      }
+        const activateDistance = window.innerWidth > 768 ? 400 : 230;
 
-      if (window.scrollY === 0) {
-        laptop.click();
-        setButtonActive(true);
+        if (distanceToBottom > activateDistance && buttonActive) {
+          setOpened(true);
+          setButtonActive(false);
+        }
+
+        if (window.scrollY === 0) {
+          setOpened(false);
+          setButtonActive(true);
+          setOpened(false);
+        }
       }
     };
 
@@ -33,27 +46,35 @@ function Laptop() {
 
   return (
     <div className="flex flex-col items-start">
-      <div className="md:w-96">
-        <button
-          onClick={() => interact((current) => !current)}
-          className={`pimba inline-block hover:bg-[#825aba]/75 ${
-            opened
-              ? "bg-[#825aba]/75 text-gray-100"
-              : "bg-gray-400 text-gray-800"
-          }  hover:text-gray-100 mr-2 px-2 py-0.5 rounded`}
-        >
-          Resolvoo
-        </button>
+      <div className="w-full">
+        {imagesArray.map((img, index) => (
+          <div className="inline-block" key={index}>
+            <button
+              onClick={() => {
+                setOpened(true);
+                setSelectedImage(img.src);
+              }}
+              style={{
+                backgroundColor:
+                  opened && selectedImage === img.src ? img.color : "#aaaaaa",
+                color: "white",
+              }}
+              className="pimba rounded mr-2 px-2 py-0.5"
+            >
+              {img.text}
+            </button>
+          </div>
+        ))}
       </div>
       <div className="py-20 w-full">
         <div
           className="laptop cursor-pointer"
-          onClick={() => interact((current) => !current)}
+          onClick={() => setOpened((current) => !current)}
         >
           <div className={`laptop__screen ${opened ? "open" : ""}`}>
             <div className="laptop__status rounded-sm p-1 md:p-2 laptop__status--opened">
               <div className="relative h-full w-full">
-                <Image src={resolvoo} fill className="rounded" />
+                <Image src={selectedImage} fill className="rounded" />
                 <div
                   className={`bg-gray-900 absolute w-full h-full transition-opacity delay-500 ${
                     opened ? "opacity-0" : "opacity-100"

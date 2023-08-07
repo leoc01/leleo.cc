@@ -71,7 +71,7 @@ export default function Menu({ path, activateLink }) {
             className={`fixed z-20 top-0 left-0 md:relative pt-7 md:pt-1 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
               clicked
                 ? "animate-[abremenu_0.3s_ease-out]"
-                : "animate-[fechamenu_0.2s_ease-in-out] hidden md:block"
+                : "animate-[fechamenu_0.2s_ease-in-out] md:animate-none hidden md:block"
             }`}
           >
             <div className="flex flex-col md:flex-row md:justify-end">
@@ -111,26 +111,23 @@ export default function Menu({ path, activateLink }) {
                 </p>
                 <p className="text-gray-800 text-lg mt-8">Me manda um email:</p>
                 <Maildiv />
-                <div className="p-6 md:hidden inline-grid grid-cols-2 gap-2">
-                  <Link
-                    className="relative h-16"
-                    href="https://github.com/leoc01"
-                    target="_blank"
-                  >
+                <div className="p-2 md:hidden grid justify-items-center grid-cols-2 gap-2">
+                  <Link href="https://github.com/leoc01" target="_blank">
                     <Image
                       src={githubIcon}
-                      fill
+                      width={64}
+                      height={64}
                       className="p-2 rounded-2xl object-contain"
                     />
                   </Link>
                   <Link
-                    className="relative h-16"
                     href="https://www.linkedin.com/in/leocampetti/"
                     target="_blank"
                   >
                     <Image
                       src={linkedinIcon}
-                      fill
+                      width={68}
+                      height={64}
                       className="p-2 rounded-2xl object-contain"
                     />
                   </Link>

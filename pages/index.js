@@ -17,8 +17,10 @@ function Home() {
         <Head>
           <title>Portfólio do Leonardo</title>
         </Head>
-        <p className="text-2xl pt-28 md:text-center">Prazer, Léo.</p>
-        <p className="text-4xl pt-10 md:max-w-xl md:text-center md:mx-auto">
+        <p className="text-2xl md:text-3xl pt-28 md:text-center">
+          Prazer, Léo.
+        </p>
+        <p className="text-4xl md:text-5xl pt-10 md:max-w-3xl md:text-center md:mx-auto">
           Eu faço websites{" "}
           <span className="bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 bg-[length:100%_5px] bg-no-repeat bg-bottom">
             ultra-rápidos
