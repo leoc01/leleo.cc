@@ -68,7 +68,7 @@ export default function Menu({ path, activateLink }) {
             onClick={() => setClicked((current) => !current)}
           ></div>
           <div
-            className={`fixed z-20 top-0 left-0 md:relative pt-7 md:pt-1 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
+            className={`fixed z-40 top-0 left-0 md:relative pt-7 md:pt-1 px-4 w-full -top-3 bg-white border-b md:border-b-0 md:bg-gray-100 ${
               clicked
                 ? "animate-[abremenu_0.3s_ease-out]"
                 : "animate-[fechamenu_0.2s_ease-in-out] md:animate-none hidden md:block"
@@ -87,10 +87,15 @@ export default function Menu({ path, activateLink }) {
                   leleo.cc
                 </Link>
                 <button
-                  className="justify-self-end relative px-3 md:hidden"
+                  className="justify-self-end relative px-4 pt-1 md:hidden"
                   onClick={() => setClicked((current) => !current)}
                 >
-                  <Image src={closeIcon} fill className="object-contain" />
+                  <Image
+                    src={closeIcon}
+                    width={26}
+                    height={26}
+                    className="object-contain"
+                  />
                 </button>
               </div>
               {menuItems.map((menuItem) => {
@@ -136,10 +141,15 @@ export default function Menu({ path, activateLink }) {
             </div>
           </div>
           <button
-            className="relative px-3 md:hidden col-start-2 col-span-1"
+            className="fixed top-4 z-30 py-3 px-4 rounded-xl drop-shadow-md right-4 px-3 md:hidden bg-white"
             onClick={() => setClicked((current) => !current)}
           >
-            <Image src={menuIcon} fill className="object-contain" />
+            <Image
+              src={menuIcon}
+              width={28}
+              height={28}
+              className="object-contain"
+            />
           </button>
         </div>
       </div>
