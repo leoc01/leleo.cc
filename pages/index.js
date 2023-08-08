@@ -67,7 +67,7 @@ function Home() {
           <span>O que eu faço?</span>
         </p>
         <Details title="Desenvolvimento de Websites">
-          <p className="mb-2">
+          <p className="mb-2 max-w-2xl">
             Desenvolvimento de Websites, Landing Pages, Blogs, com tecnologias
             atuais e sempre considerando as melhores práticas de UX design, SEO
             e acessibilidade.
@@ -75,22 +75,22 @@ function Home() {
         </Details>
 
         <Details title="Hospedagem em servidores de alta performance">
-          <p className="mb-2">
+          <p className="mb-2 max-w-2xl">
             O seu site será rápido e terá alta disponibilidade. Mantendo a
             qualidade mesmo com uma quantidade muito grande de acessos, a um
             ótimo custo-benefício. Suporte incluso.
           </p>
-          <p className="mb-2">Suporte incluso.</p>
+          <p className="mb-2 max-w-2xl">Suporte incluso.</p>
         </Details>
 
         <Details title="Elaboração de protótipo interativo">
-          <p className="mb-2">
+          <p className="mb-2 max-w-2xl">
             Criação de protótipo interativo no Figma para o seu Website ou
             Aplicativo. O protótipo é desenvolvido Mobile-first, e sempre
             seguindo os manuais de identidade visual desenvolvidos pelo seu
             designer.
           </p>
-          <p className="mb-2 max-w-3xl">
+          <p className="mb-2 max-w-2xl">
             Se você ainda não tem uma identidade visual, eu posso indicar um
             estúdio que faz um trabalho incrível.
           </p>

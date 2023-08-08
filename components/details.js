@@ -15,7 +15,7 @@ function Details({ title, children }) {
         onToggle={handleToggle}
       >
         <summary className="flex items-center gap-10 justify-between">
-          <p className="text-lg py-2">{title}</p>
+          <p className="text-lg py-2 mt-2">{title}</p>
           <div
             className={`transform transition-transform duration-200 text-4xl text-green-600 ${
               isOpen ? "rotate-45 text-red-600" : ""
@@ -26,7 +26,7 @@ function Details({ title, children }) {
         </summary>
         <div
           onClick={handleToggle}
-          className="py-3 px-2 bg-white border-gray-300 border-l-2 text-lg text-gray-800 max-w-2xl cursor-default"
+          className="py-3 px-2 md:p-6 bg-white border-gray-300 border-l-2 text-lg text-gray-800 w-full cursor-default"
         >
           {children}
         </div>
