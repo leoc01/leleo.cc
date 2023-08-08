@@ -16,7 +16,7 @@ export default function Layout({ children, description, path, activateLink }) {
         <link rel="icon" href="./website-design.svg" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Desenvolvimento de websites ultra-rápidos que engajam o seu público."
         />
         <meta name="og:title" content="Portfólio do Leonardo" />
       </Head>
