@@ -74,7 +74,7 @@ Os feedbacks podem ser de forma orgânica: com uma comunicação direta; ou de f
 
 Os cookies, eles são um conjunto de ferramentas muito úteis na analise da experiência do usuário. Com os insights obtidos, podemos criar uma experiência que faça sentido para o seu público e que o mantenha engajado.
 
-No meu site, escolhi não usar cookies. Eu pergunto sobre a experiência do visitante e analiso o retorno que estou obtendo. Assim, consigo avaliar se estou sendo assertivo na minha comunicação e me adaptar.
+Aqui no site, escolhi não usar cookies. Eu pergunto sobre a experiência do visitante e analiso o retorno que estou obtendo. Assim, consigo avaliar se estou sendo assertivo na minha comunicação e me adaptar.
 
 ## **Fique por dentro**
 

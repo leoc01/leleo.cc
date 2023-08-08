@@ -39,12 +39,12 @@ function Post({ postData }) {
           Voltar
         </button>
         <article className="mt-6 bg-white px-5 py-8 md:px-12 md:py-10 max-w-3xl rounded-2xl drop-shadow-md border">
-          <h1 className="text-3xl">
+          <h1 className="text-3xl text-gray-800">
             <strong>{postData.title}</strong>
           </h1>
           <Date className="text-gray-400 text-s" dateString={postData.date} />
           <div
-            className="mt-12"
+            className="font-sans mt-12 leading-8 border-gray-300"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
           <style jsx global>
@@ -55,25 +55,31 @@ function Post({ postData }) {
               h4,
               p,
               li {
-                color: #121827;
+                color: #1f2937;
+                font-weight: 300;
               }
               h2 {
                 font-size: 1.5rem;
-                margin-top: 2.5rem;
+                margin-top: 3rem;
                 margin-bottom: 1rem;
                 border-bottom: solid 1px;
+                border-color: rgb(209 213 219);
               }
 
               h3 {
                 font-size: 1.25rem;
-                margin-top: 1.25rem;
-                margin-bottom: 0.75rem;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
               }
 
               p,
               li {
                 font-size: 1.125rem;
-                margin-bottom: 0.6rem;
+              }
+
+              p,
+              ul {
+                margin-bottom: 1rem;
               }
 
               ul {
