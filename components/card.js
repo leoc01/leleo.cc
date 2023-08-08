@@ -8,16 +8,8 @@ export default function Card({ title, date, description, path }) {
   return (
     <Container>
       <Link href={`/blog/${path}`} className="max-w-3xl">
-        <div className="flex mb-6 bg-white mt-5 rounded-2xl md:max-w-3xl transition ease-out duration-300 drop-shadow-md border md:hover:drop-shadow-xl md:hover:-translate-y-1">
-          <div className="hidden md:block relative md:w-1/4">
-            <Image
-              src={post1img}
-              fill
-              className="aspect-square rounded-2xl object-contain"
-              placeholder="blur"
-            ></Image>
-          </div>
-          <div className="py-6 px-6 md:w-3/4">
+        <div className="flex mb-6 bg-white mt-5 rounded-2xl md:max-w-2xl transition ease-out duration-300 drop-shadow-md border md:hover:drop-shadow-xl md:hover:-translate-y-1">
+          <div className="px-6 py-4">
             <h3 className="text-2xl">{title}</h3>
             <Date className="text-gray-400 text-s" dateString={date} />
             <p className="text-lg mt-3">{description}</p>

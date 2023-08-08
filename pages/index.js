@@ -58,10 +58,10 @@ function Home() {
         </p>
 
         <Card
-          title="Principais etapas no desenvolvimento de um website funcional"
+          title="Desenvolvendo um projeto com resultados reais"
           date="2023-08-01"
           description="Não sabe por onde começar o desenvolvimento do seu website? Sempre começe pelo objetivo."
-          path="etapas-no-desenvolvimento"
+          path="desenvolvendo-projetos-reais"
         />
         <p className="text-2xl mt-24 mb-8">
           <span>O que eu faço?</span>

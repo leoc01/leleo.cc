@@ -26,7 +26,7 @@ function Details({ title, children }) {
         </summary>
         <div
           onClick={handleToggle}
-          className="pb-4 pl-2 border-gray-300 border-l-2 text-lg text-gray-800 max-w-2xl cursor-default"
+          className="py-3 px-2 bg-white border-gray-300 border-l-2 text-lg text-gray-800 max-w-2xl cursor-default"
         >
           {children}
         </div>

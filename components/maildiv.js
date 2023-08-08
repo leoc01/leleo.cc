@@ -18,7 +18,7 @@ function Maildiv() {
             className="object-contain"
           />
         </div>
-        <p>leonardocampetti@gmail.com</p>
+        <div>leonardocampetti@gmail.com</div>
       </Link>
     </div>
   );

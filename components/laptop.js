@@ -89,15 +89,16 @@ function Laptop() {
         <style jsx global>
           {`
             :root {
-              --largura: 250px;
-              --altura: 140px;
+              --factormobile: 18;
+              --largura: calc(var(--factormobile) * 16px);
+              --altura: calc(var(--factormobile) * 9px);
               --esptela: 4px;
               --espcorpo: 8px;
             }
 
             @media screen and (min-width: 768px) {
               :root {
-                --factor: 2;
+                --factor: 2.1;
                 --largura: calc(var(--factor) * 250px);
                 --altura: calc(var(--factor) * 140px);
                 --esptela: calc(var(--factor) * 4px);

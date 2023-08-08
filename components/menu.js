@@ -35,13 +35,13 @@ export default function Menu({ path, activateLink }) {
         >
           <strong>leleo.cc</strong>
         </Link>
-        <p
+        <div
           className={`${
             (href !== "/" && "text-gray-500") || "text-gray-900"
           } text-3xl px-1`}
         >
           /
-        </p>
+        </div>
         <div
           className={`relative h-9 grow grid justify-end md:item-baseline grid-cols-[auto_auto] ${
             href !== "/" ? "grid-cols-[auto_auto] justify-between" : ""
@@ -110,11 +110,13 @@ export default function Menu({ path, activateLink }) {
                 );
               })}
               <div className="md:hidden">
-                <p className="text-gray-800 text-lg mt-8 mr-3">
+                <div className="text-gray-800 text-lg mt-8 mr-3">
                   Eu sou um Desenvolvedor Web muito curioso, sempre busco estar
                   atualizado e, tenho muito interesse em fazer novas parcerias.
-                </p>
-                <p className="text-gray-800 text-lg mt-8">Me manda um email:</p>
+                </div>
+                <div className="text-gray-800 text-lg mt-8">
+                  Me manda um email:
+                </div>
                 <Maildiv />
                 <div className="p-2 md:hidden grid justify-items-center grid-cols-2 gap-2">
                   <Link href="https://github.com/leoc01" target="_blank">
