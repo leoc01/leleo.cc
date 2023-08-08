@@ -73,8 +73,13 @@ function Laptop() {
         >
           <div className={`laptop__screen ${opened ? "open" : ""}`}>
             <div className="laptop__status rounded-sm p-1 md:p-2 laptop__status--opened">
-              <div className="relative h-full w-full">
-                <Image src={selectedImage} fill className="rounded" />
+              <div className="relative h-full w-full bg-gray-900">
+                <Image
+                  src={selectedImage}
+                  fill
+                  placeholder="empty"
+                  className="rounded"
+                />
                 <div
                   className={`bg-gray-900 absolute w-full h-full transition-opacity delay-500 ${
                     opened ? "opacity-0" : "opacity-100"
