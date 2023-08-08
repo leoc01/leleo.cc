@@ -3,7 +3,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Container from "../../components/container";
-import Description from "../../components/description";
 import Date from "../../components/date";
 
 export async function getStaticProps({ params }) {
@@ -24,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 function Post({ postData }) {
-  const actualLocal = useRouter();
+  const router = useRouter();
 
   return (
     <Layout path="/blog" activateLink={true}>
@@ -32,7 +31,14 @@ function Post({ postData }) {
         <title>Post do Leonardo</title>
       </Head>
       <Container>
-        <article className="mt-12 bg-white px-5 py-8 md:px-12 md:py-10 max-w-3xl rounded-2xl drop-shadow-md border">
+        <button
+          type="button"
+          className="sticky mt-6 top-4 z-20 text-2xl text-gray-900 px-3 py-1 drop-shadow-md bg-gray-100 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-300"
+          onClick={() => router.back()}
+        >
+          Voltar
+        </button>
+        <article className="mt-6 bg-white px-5 py-8 md:px-12 md:py-10 max-w-3xl rounded-2xl drop-shadow-md border">
           <h1 className="text-3xl">
             <strong>{postData.title}</strong>
           </h1>

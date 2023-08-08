@@ -143,7 +143,7 @@ export default function Menu({ path, activateLink }) {
             </div>
           </div>
           <button
-            className="fixed top-4 z-30 py-3 px-4 rounded-xl drop-shadow-md right-4 px-3 md:hidden bg-white"
+            className="fixed top-4 z-30 py-3 px-4 right-4 px-3 md:hidden drop-shadow-md bg-gray-100 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-300"
             onClick={() => setClicked((current) => !current)}
           >
             <Image
