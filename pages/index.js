@@ -40,14 +40,13 @@ function Home() {
           para o seu negócio...
         </p>
         <div className="max-w-3xl grid justify-center">
-          <Link href="#ideia" scroll={false}>
-            <Image
-              src={arrowDown}
-              height={30}
-              width={30}
-              className="mx-auto my-8"
-            />
-          </Link>
+          <Image
+            src={arrowDown}
+            height={30}
+            width={30}
+            className="mx-auto my-8"
+            alt="seta para baixo"
+          />
         </div>
         <p className="text-lg px-2 mb-8 max-w-3xl">
           Venha ver este blog onde explico sobre práticas modernas de

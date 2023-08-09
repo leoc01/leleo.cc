@@ -89,6 +89,7 @@ export default function Menu({ path, activateLink }) {
                 <button
                   className="justify-self-end relative px-4 pt-1 md:hidden"
                   onClick={() => setClicked((current) => !current)}
+                  aria-label="Fechar Menu"
                 >
                   <Image
                     src={closeIcon}
@@ -125,6 +126,7 @@ export default function Menu({ path, activateLink }) {
                       width={64}
                       height={64}
                       className="p-2 rounded-2xl object-contain"
+                      alt="ver perfil no github"
                     />
                   </Link>
                   <Link
@@ -136,6 +138,7 @@ export default function Menu({ path, activateLink }) {
                       width={68}
                       height={64}
                       className="p-2 rounded-2xl object-contain"
+                      alt="ver perfil no linkedin"
                     />
                   </Link>
                 </div>
@@ -145,12 +148,14 @@ export default function Menu({ path, activateLink }) {
           <button
             className="fixed top-4 z-30 py-3 px-4 right-4 px-3 md:hidden drop-shadow-md bg-gray-100 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-300"
             onClick={() => setClicked((current) => !current)}
+            aria-label="Abrir Menu"
           >
             <Image
               src={menuIcon}
               width={28}
               height={28}
               className="object-contain"
+              alt="ícone de menu"
             />
           </button>
         </div>

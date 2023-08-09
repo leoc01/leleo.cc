@@ -2,18 +2,55 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import resolvoo from "../public/resolvoo.png";
 import pilatesHome from "../public/pilateshome.png";
+import grecoPazza from "../public/grecopazza.png";
+import dstore from "../public/dstore.png";
+import trzGestao from "../public/trzgestao.png";
+import matheusAssis from "../public/matheusassis.png";
 
 function Laptop() {
   const [opened, setOpened] = useState(false);
   const [buttonActive, setButtonActive] = useState(true);
   const [selectedImage, setSelectedImage] = useState(resolvoo);
+  const [selectedAlt, setSelectedAlt] = useState(
+    "Print da tela da página inicial da Resolvoo",
+  );
 
   const imagesArray = [
-    { src: resolvoo, text: "Resolvoo", color: "#825aba" },
+    {
+      src: resolvoo,
+      text: "Resolvoo",
+      color: "#825aba",
+      alt: "Print da tela da página inicial da Resolvoo",
+    },
     {
       src: pilatesHome,
       text: "Pilates Home",
       color: "#6BA478",
+      alt: "Print da página inicial do website do cliente Pilates Home",
+    },
+    {
+      src: grecoPazza,
+      text: "Greco Pazza",
+      color: "#9E3E2D",
+      alt: "Print da página inicial do website do cliente Greco Pazza",
+    },
+    {
+      src: dstore,
+      text: "Dstore",
+      color: "#5DC47B",
+      alt: "Print da página inicial do website do cliente Dstore",
+    },
+    {
+      src: trzGestao,
+      text: "TRZ Gestão",
+      color: "#31848A",
+      alt: "Print da página inicial do website do cliente TRZ Gestão",
+    },
+    {
+      src: matheusAssis,
+      text: "Matheus Assis",
+      color: "#0E261C",
+      alt: "Print da página inicial do website do cliente Matheus Assis",
     },
   ];
 
@@ -53,13 +90,14 @@ function Laptop() {
               onClick={() => {
                 setOpened(true);
                 setSelectedImage(img.src);
+                setSelectedAlt(img.alt);
               }}
               style={{
                 backgroundColor:
                   opened && selectedImage === img.src ? img.color : "#cccccc",
                 color: opened && selectedImage === img.src ? "white" : "black",
               }}
-              className="pimba rounded mr-2 px-2 py-0.5"
+              className="pimba rounded mr-2 mb-2 px-2 py-0.5"
             >
               {img.text}
             </button>
@@ -79,6 +117,7 @@ function Laptop() {
                   fill
                   placeholder="empty"
                   className="rounded"
+                  alt={selectedAlt}
                 />
                 <div
                   className={`bg-gray-900 absolute w-full h-full transition-opacity delay-500 ${
