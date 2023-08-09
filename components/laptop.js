@@ -116,7 +116,7 @@ function Laptop() {
                   src={selectedImage}
                   fill
                   placeholder="empty"
-                  className="rounded"
+                  className="rounded object-cover overflow-hidden"
                   alt={selectedAlt}
                 />
                 <div
@@ -134,19 +134,23 @@ function Laptop() {
           {`
             :root {
               --factormobile: 18;
-              --largura: calc(var(--factormobile) * 16px);
-              --altura: calc(var(--factormobile) * 9px);
+              --largura: calc(var(--factormobile) * 16px + 4px);
+              --altura: calc(var(--factormobile) * 9px + 6px);
               --esptela: 4px;
               --espcorpo: 8px;
             }
 
             @media screen and (min-width: 768px) {
               :root {
-                --factor: 2.1;
-                --largura: calc(var(--factor) * 250px);
-                --altura: calc(var(--factor) * 140px);
+                --factor: 2;
+                --largura: calc(
+                  var(--factor) * calc(var(--factormobile) * 16px + 4px)
+                );
+                --altura: calc(
+                  var(--factor) * calc(var(--factormobile) * 9px + 6px)
+                );
                 --esptela: calc(var(--factor) * 4px);
-                --espcorpo: calc(var(--factor) * 6px);
+                --espcorpo: calc(var(--factor) * 7px);
               }
             }
 
@@ -154,7 +158,7 @@ function Laptop() {
               width: var(--largura);
               height: var(--altura);
               margin: 0 auto;
-              perspective: 1000px;
+              perspective: 2000px;
               perspective-origin: bottom;
             }
 
